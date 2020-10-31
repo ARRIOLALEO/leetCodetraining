@@ -1,0 +1,13 @@
+var runningSum = function(nums) {
+    let counter = 0
+    let solution =[]
+    nums.map(number=>{
+        let sume =0;
+        for(let i = 0; i<= counter; i++){
+           sume = sume + nums[i] 
+        }
+        counter++
+        solution.push(sume)
+    })
+    return solution
+};
