@@ -20,3 +20,20 @@ var smallerNumbersThanCurrent = function(nums) {
 };
 smallerNumbersThanCurrent([8,1,2,2,3]) // [0,0,0,0]
 smallerNumbersThanCurrent([7,7,7,7]) // [4,0,1,1,3]
+
+
+// another solution with sore we save 4 ms
+var smallerNumbersThanCurrent = function(nums) {
+  const response =[]
+  const compared =[...nums].sort()
+  nums.forEach(num=>{
+    let counter = 0;
+    for(let i= 0 ; i < compared.length; i ++){
+      if(num > compared[i]){
+        counter++
+      }
+    }
+     response.push(counter)
+  })
+  return response   
+};
