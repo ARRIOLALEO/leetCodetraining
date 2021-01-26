@@ -33,3 +33,29 @@ var isSubsequence = function(s, t) {
     }
     return true
 };
+
+
+// second Solution
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isSubsequence = function(s, t) {
+ let solution = 0  , shadow = t , startpoint = 0
+    for(let i =0 ;i < s.length ; i++){
+        let sentinel = true
+        for(let j = startpoint ; j < shadow.length; j++){
+            if(s[i] === shadow[j]){
+               if(sentinel === true){
+                  solution++
+                   startpoint = j + 1
+                   sentinel = false
+               } 
+            }
+        }
+        
+    }
+if(s.length !== solution) return false
+return true
+};
