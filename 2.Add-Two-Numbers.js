@@ -11,14 +11,13 @@
  * @return {ListNode}
  */
 var addTwoNumbers = function(l1, l2) {
-    let first = sume(l1);
-    let second = sume(l2);
-    let sume1 = first + second;
-    sume1 = String(sume1);
-    sume1 = [...sume1];
-    console.log(sume1);
+    let firstSume = sumeList(l1);
+    let secondSume = sumeList(l2);
+    let sume = firstSume + secondSume;
+    sume = String(sume);
+    sume = [...sume];
     let head = null;
-    sume1.forEach(x => {
+    sume.forEach(x => {
         let n = new ListNode(x);
         n.next = head;
         head = n;
@@ -26,7 +25,7 @@ var addTwoNumbers = function(l1, l2) {
     return head
 };
 
-function sume(l) {
+function sumeList(l) {
     let response = "";
     while (l) {
         response += String(l.val);
