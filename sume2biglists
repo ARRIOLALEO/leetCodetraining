@@ -1,0 +1,45 @@
+// Singly-linked lists are already defined with this interface:
+// function ListNode(x) {
+//   this.value = x;
+//   this.next = null;
+// }
+//
+function addTwoHugeNumbers(a, b) {
+  a = reverse(a)
+  b = reverse(b)
+  return (sume(a,b))
+}
+function sume(a,b){
+    carry = 0
+    response = null
+    while(a || b || carry){
+        sume = 0
+        e1 = a?a.value:0
+        e2 = b?b.value:0
+        sume = e1 + e2 + carry
+        if(sume > 9999){
+            sume -=10000
+            carry = 1
+        }else{
+            carry = 0
+        }
+        node = new ListNode(sume)
+        temp = response
+        response = node
+        response.next = temp
+        a = a.next?a.next:0
+        b = b.next?b.next:0
+    }
+    return response
+}
+
+function reverse(list){
+    r = null;
+    while(list){
+        temp = r
+        r = list   
+        list = list.next
+        r.next = temp
+    }
+    return r
+}
