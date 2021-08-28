@@ -21,3 +21,18 @@ class Solution:
             
         return solution
         
+# after apply DRY
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        dc = {}
+        
+        for i in strs:
+            x = [c for c in i]
+            x.sort()
+            x = "".join(x)
+            if x in dc:
+                dc[x] += [i]
+            else:
+                dc[x] = [i]
+                
+        return dc.values()
