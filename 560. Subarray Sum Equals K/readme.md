@@ -12,7 +12,7 @@ Output: 2</pre>
 ### Example 2:
 <pre>
 Input: nums = [1,2,3], k = 3
-Output: 2</re>
+Output: 2</pre>
  
 
 ### Constraints:
