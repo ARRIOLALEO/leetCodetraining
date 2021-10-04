@@ -15,13 +15,13 @@ Output: [[15,7],[9,20],[3]]</pre>
 <pre>Input: root = [1]
 Output: [[1]]</pre>
 
-###Example 3:
+### Example 3:
 
 <pre>Input: root = []
 Output: []
  </pre>
 
-<pre>Constraints:
-
+### Constraints:
+<pre>
 The number of nodes in the tree is in the range [0, 2000].
 -1000 <= Node.val <= 1000</pre>
