@@ -16,7 +16,7 @@ Input: root = [1]
 Output: [[1]]
 </pre>
 
-###Example 3:
+### Example 3:
 <pre>
 Input: root = []
 Output: []
