@@ -13,9 +13,28 @@ class Solution:
                     yield node.val
                 yield from dfs(node.left)
                 yield from dfs(node.right)
-        print(list(dfs(root1)))
+  
         return (list(dfs(root1)) == list(dfs(root2)))
 
             
         
         
+# abonther solution not uing yild
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def leafSimilar(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
+        def bfs(node,res=[]):
+            if not node:
+                return
+            if not node.left and not node.right:
+                res.append((node.val))
+            bfs(node.left,res)
+            bfs(node.right,res)
+            return res
+        return bfs(root1,[]) == bfs(root2,[])
+    
