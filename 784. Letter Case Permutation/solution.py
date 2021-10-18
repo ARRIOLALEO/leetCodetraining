@@ -1,14 +1,24 @@
 class Solution:
     def letterCasePermutation(self, s: str) -> List[str]:
-        size = len(s)
-        result = [s.lower()]
-        for i in range((size - 1), -1 , -1):
+        # create the base case
+        solution = [s.lower()]
+        
+        # createing the backtracking interation 
+        for i in range(len(s)-1,-1,-1):
+            # is the element is alphanumeric we iterate the two options
             if s[i].isalpha():
-                temp =[]
-                for e in result:
-                    temp.append(e)
-                    left = list(e)
-                    left[i] = left[i].upper()
-                    temp.append("".join(left))
-                result = temp
-        return result
+                #create our new solution
+                temp = []
+                #iterate our previous solutions to create the new permutations
+                for p in solution:
+                    # adding previous permutations
+                    temp.append(p)
+                    #creating new permuatitions strings are inutable changing to list
+                    p = list(p)
+                    #change to uppercase our alpha character
+                    p[i] = p[i].upper()
+                    #add our permuation to solutions as str
+                    temp.append("".join(p))
+                #adding our new permutations to solutions
+                solution = temp
+        return solution
