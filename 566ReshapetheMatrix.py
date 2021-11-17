@@ -20,3 +20,27 @@ class Solution:
             return mat
         return solution 
         
+class Solution:
+    def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+        rows = len(mat)
+        cols = len (mat[0])
+        
+        if (rows * cols) != (r * c):
+            return mat
+        
+        flat_matrix = []
+
+        for row in mat:
+            for col in row:
+                flat_matrix.append(col)
+     
+        if r == 1:
+            return [flat_matrix]
+        
+        solution = []
+        for row in range(r):
+            temp = []
+            for col in range(c):
+                temp.append(flat_matrix.pop(0))
+            solution.append(temp)
+        return solution
